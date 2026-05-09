@@ -1040,6 +1040,7 @@ function flash(el) { el.classList.add('pressed'); setTimeout(()=>el.classList.re
 
 // ── PHYSICAL KEYBOARD ────────────────────────────
 document.addEventListener('keydown', e => {
+  if (document.activeElement === document.getElementById('eng-input')) return;
   if (e.ctrlKey||e.metaKey||e.altKey) return;
   if (e.key==='Backspace')  { e.preventDefault(); handleBackspace(); }
   else if (e.key===' ')     { e.preventDefault(); handleSpace(); }
